@@ -1,0 +1,41 @@
+{
+  "name": "panto-transformer-eslint",
+  "version": "0.1.0",
+  "description": "Eslint transformer for panto",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src index.js && ./node_modules/.bin/mocha",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "prepublish": "npm run test"
+  },
+  "pre-commit": "test",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pantojs/panto-transformer-eslint.git"
+  },
+  "keywords": [
+    "panto",
+    "eslint",
+    "transformer"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "author": "yanni4night@gmail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pantojs/panto-transformer-eslint/issues"
+  },
+  "homepage": "https://github.com/pantojs/panto-transformer-eslint",
+  "dependencies": {
+    "eslint": "^3.4.0",
+    "panto-transformer": "^0.2.4"
+  },
+  "devDependencies": {
+    "panto": "0.0.32",
+    "coveralls": "^2.11.9",
+    "mocha": "^3.0.2",
+    "mocha-lcov-reporter": "^1.2.0",
+    "pre-commit": "^1.1.3"
+  }
+}
